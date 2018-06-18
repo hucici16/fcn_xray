@@ -37,7 +37,7 @@ int main( int argc, char** argv )
       std::cout << i << "\n";
       i++;
       image = imread(PATHTORAWIMAGES+name, CV_LOAD_IMAGE_GRAYSCALE);
-      label = imread(PATHTORAWIMAGES+name, CV_LOAD_IMAGE_GRAYSCALE);
+      label = imread(PATHTORAWIMAGES+name, CV_LOAD_IMAGE_COLOR);
       label = Scalar(0,0,0);
       if(!image.data) { // Check for invalid input
         cout <<  "Could not open or find the image" << endl ;
