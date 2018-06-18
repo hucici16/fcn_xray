@@ -79,20 +79,13 @@ int manipulateImagesIntensity(std::vector<cv::Mat>& images, std::vector<cv::Mat>
       cv::Mat temp = Mat::zeros(images[i].size(),images[i].type());
       cv::Mat labelcpy;
       labels[i].copyTo(labelcpy);
-      // int r = ;
-      // int c = ;
-      // for all pixels
       for (int r = 0; r < images[i].rows; r++) {
         for (int c = 0; c < images[i].cols; c++) {
-          // for (int j = 0; j < 3; j++) {
-            temp.at<uchar>(r,c) = cv::saturate_cast<uchar>(images[i].at<uchar>(r,c) *(value));
-          // }
+          temp.at<uchar>(r,c) = cv::saturate_cast<uchar>(images[i].at<uchar>(r,c) + value);
         }
       }
-      // if (!rejectImageBecauseTooWhiteOrBlack(temp))
       images.push_back(temp);
       labels.push_back(labelcpy);
-      // cout << "intensity changed: " << i << endl;
     }
   }
   return 1;

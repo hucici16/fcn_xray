@@ -1,9 +1,9 @@
 #include "imageProcessing.h"
 
 extern const std::string PATHTOLABELCOORDS = "./labels_sorted0.txt";
-extern const std::string PATHTORAWIMAGES = "/home/inwatec/Xray_Seg/raw_images/IMAGES_622/";
-extern const std::string PATHTOSAVEIMAGES = "/home/inwatec/Xray_Seg/ver3.2/images/";
-extern const std::string PATHTOSAVELABELS = "/home/inwatec/Xray_Seg/ver3.2/labels/";
+extern const std::string PATHTORAWIMAGES = "./raw_images/";
+extern const std::string PATHTOSAVEIMAGES = "./images/";
+extern const std::string PATHTOSAVELABELS = "./labels/";
 
 int main( int argc, char** argv )
 {
@@ -36,8 +36,8 @@ int main( int argc, char** argv )
       imageProcessing(image, label, _totalImagesSaved, _totalLabelsSaved, PATHTOSAVEIMAGES, PATHTOSAVELABELS);
       std::cout << i << "\n";
       i++;
-      image = imread(PATHTORAWIMAGES+name, CV_LOAD_IMAGE_COLOR);
-      label = imread(PATHTORAWIMAGES+name, CV_LOAD_IMAGE_COLOR);
+      image = imread(PATHTORAWIMAGES+name, CV_LOAD_IMAGE_GRAYSCALE);
+      label = imread(PATHTORAWIMAGES+name, CV_LOAD_IMAGE_GRAYSCALE);
       label = Scalar(0,0,0);
       if(!image.data) { // Check for invalid input
         cout <<  "Could not open or find the image" << endl ;
