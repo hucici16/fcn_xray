@@ -18,9 +18,9 @@ using namespace std;
 
 void saveImages(std::string folder, std::vector<cv::Mat> images, int& _totalSamplesSaved);
 void saveSingleImage(std::string folder, cv::Mat image, int& _totalSamplesSaved);
-int imageProcessing(cv::Mat image, cv::Mat label, int& _totalImagesSaved, int& _totalLabelsSaved,
-  std::string folderToSaveImages, std::string folderToSaveLabels);
-int rotateAndFlipWholeImage(std::vector<cv::Mat>& images);
+int imageProcessing(cv::Mat image, cv::Mat label, std::vector<int*> labelCoords, std::vector<int*> labelRGBs,
+  int& _totalImagesSaved, int& _totalLabelsSaved, std::string folderToSaveImages, std::string folderToSaveLabels);
+int rotateAndFlipWholeImage(std::vector<cv::Mat>& images, size_t n);
 int manipulateImagesIntensity(std::vector<cv::Mat>& images, std::vector<cv::Mat>& labels,
   int amount, int times, size_t n);
 int classColorMatch(std::string& class_name, int& R, int& G, int& B);
@@ -29,6 +29,8 @@ int gray(cv::Mat image);
 cv::Mat rotate(cv::Mat src, double angle);
 void flipWholeImages(std::vector<cv::Mat>& images, size_t n);
 int rotateImages(std::vector<cv::Mat>& images, double angle, size_t n);
+int FlipLabelAreaImages(std::vector<cv::Mat>& images, std::vector<cv::Mat>& labels, std::vector<int*> labelCoords, size_t n, int flipType);
+// int scaleAndReflect(std::vector<cv::Mat>& images, std::vector<cv::Mat>& labels, std::vector<int*> labelCoords, std::vector<int*> labelRGBs);
 
 // bool checkCoordinates(int x, int y, int w, int h, cv::Mat image);
 // bool rejectImageBecauseTooWhiteOrBlack(cv::Mat imgCopy);
