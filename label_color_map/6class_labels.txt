@@ -1,0 +1,10 @@
+background
+belongs_to_garment
+foreign_object
+penlike_object
+needle_hairpin
+paperclip
+
+
+and 255 is the ignore label that marks pixels excluded from learning and
+evaluation by the PASCAL VOC ground truth.
