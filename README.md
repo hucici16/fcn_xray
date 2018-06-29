@@ -1,5 +1,5 @@
-# Fully Convolutional Models (FCNs) for Semantic Segmentation on X-ray Images
-# -- Methodology
+# Fully Convolutional Models (FCNs) for Semantic Segmentation on X-ray Images -- Methodology
+> NOTE: this page introduce the detailed methodology of the project; for the present stage resulte, refer to this [project report](project_report.pdf). 
 
 Table of Contents
 =================
